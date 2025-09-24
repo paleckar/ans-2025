@@ -34,3 +34,4 @@
 |-----|------------|-----------------------------------------------------|-----------------------------------------------|
 | 0.  | 17.9.2025  | [Úvod](slides/ans-00-intro.pdf)                     | podmínky předmětu, úvod                       |
 | 1.  | 17.9.2025  | [Lineární klasifikace](slides/ans-01-linear.pdf)    | lineární klasifikace, softmax, svm            |
+| 2.  | 24.9.2024  | [Optimalizace](slides/ans-02-optimization.pdf)      | optimalizace, gradient, SGD, momentum, Adam   |
