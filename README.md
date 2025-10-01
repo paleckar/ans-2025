@@ -10,6 +10,17 @@
 | 2.  | 24.9.2024  | [Optimalizace](slides/ans-02-optimization.pdf)      | optimalizace, gradient, SGD, momentum, Adam   |
 
 
+## Úlohy
+
+- Bodování úloh a termíny odevzdání jsou specifikovány v konfiguračním souboru [assignments.yaml](assignments.yaml).
+- Odevzdání úlohy po termínu bude penalizováno odečtením 50 % bodů.
+- Další podmínky a známkování jsou v přednášce [Úvod](slides/ans-00-intro.pdf).
+
+| #  | úloha                                                           | body    | deadline   |
+|----|-----------------------------------------------------------------|---------|------------|
+| 1. | [Lineární klasifikace](assignments/linear_classification.ipynb) | 20 (32) | 21.10.2025 |
+
+
 ## Nastavení
 
 ### 1. Balíčkovací manažer

@@ -1,0 +1,37 @@
+- notebook: linear_classification
+  testfile: test_linear_classification
+  deadline: 2025-10-21
+  tests:
+    - name: TestPreprocess
+      points: 1
+      params:
+        preprocess_fn: preprocess
+    - name: TestBatchLoader
+      points: 3
+    - name: TestInit
+      points: 1
+    - name: TestTrainStepSoftmax
+      points: 5
+    - name: TestValStepSoftmax
+      points: 2
+    - name: TestAccuracy
+      points: 1
+    - name: TestTrainEpoch
+      points: 1
+    - name: TestValidate
+      points: 1
+    - name: TestSoftmaxValAccuracy
+      points: 5
+      params:
+        preprocess_fn: preprocess
+    - name: TestTrainStepSVM
+      points: 5
+      required: false
+    - name: TestValStepSVM
+      points: 2
+      required: false
+    - name: TestSVMValAccuracy
+      points: 5
+      required: false
+      params:
+        preprocess_fn: preprocess
