@@ -1,5 +1,15 @@
 # Aplikace neuronových sítí 2025
 
+
+## Přednášky
+
+| #   | datum      | přednáška                                           | obsah                                         |
+|-----|------------|-----------------------------------------------------|-----------------------------------------------|
+| 0.  | 17.9.2025  | [Úvod](slides/ans-00-intro.pdf)                     | podmínky předmětu, úvod                       |
+| 1.  | 17.9.2025  | [Lineární klasifikace](slides/ans-01-linear.pdf)    | lineární klasifikace, softmax, svm            |
+| 2.  | 24.9.2024  | [Optimalizace](slides/ans-02-optimization.pdf)      | optimalizace, gradient, SGD, momentum, Adam   |
+
+
 ## Nastavení
 
 ### 1. Balíčkovací manažer
@@ -18,20 +28,12 @@
 
 ### 2. Virtuální prostředí a instalace potřebných balíků
 - Potřebné balíčky jsou uvedeny v souborech `pyproject.toml` a `uv.lock`.
-- Všechny je lze nainstalovat pomocí příkazu  
+- Pokud jsou uvedené soubory v aktuálním adresáři, všechny balíčky lze nainstalovat pomocí příkazu  
   ```
   uv sync
   ```
-- Pro príkaz je nutné, aby soubory `pyproject.toml` a `uv.lock` byly v aktuálním adresáři, ze kterého je příkaz spouštěn.
+- Příkaz vytvoří sub-adresář `./.venv` a v něm nové virtuální prostředí se vším potřebným.
 
 ### 3. Obsah předmětu
 - Úlohy jsou ve formě [Jupyter notebooks](https://jupyter.org/).
 - Doporučený nástroj na práci s kódy je [Visual Studio Code](https://code.visualstudio.com/) s rozšířeními [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python) a [Jupyter](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter).
-
-## Přednášky
-
-| #   | datum      | přednáška                                           | obsah                                         |
-|-----|------------|-----------------------------------------------------|-----------------------------------------------|
-| 0.  | 17.9.2025  | [Úvod](slides/ans-00-intro.pdf)                     | podmínky předmětu, úvod                       |
-| 1.  | 17.9.2025  | [Lineární klasifikace](slides/ans-01-linear.pdf)    | lineární klasifikace, softmax, svm            |
-| 2.  | 24.9.2024  | [Optimalizace](slides/ans-02-optimization.pdf)      | optimalizace, gradient, SGD, momentum, Adam   |
