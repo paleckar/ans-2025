@@ -3,11 +3,12 @@
 
 ## Přednášky
 
-| #   | datum      | přednáška                                           | obsah                                         |
-|-----|------------|-----------------------------------------------------|-----------------------------------------------|
-| 0.  | 17.9.2025  | [Úvod](slides/ans-00-intro.pdf)                     | podmínky předmětu, úvod                       |
-| 1.  | 17.9.2025  | [Lineární klasifikace](slides/ans-01-linear.pdf)    | lineární klasifikace, softmax, svm            |
-| 2.  | 24.9.2024  | [Optimalizace](slides/ans-02-optimization.pdf)      | optimalizace, gradient, SGD, momentum, Adam   |
+| #  | datum     | přednáška                                        | obsah                                       |
+|----|-----------|--------------------------------------------------|---------------------------------------------|
+| 0. | 17.9.2025 | [Úvod](slides/ans-00-intro.pdf)                  | podmínky předmětu, úvod                     |
+| 1. | 17.9.2025 | [Lineární klasifikace](slides/ans-01-linear.pdf) | lineární klasifikace, softmax, svm          |
+| 2. | 24.9.2025 | [Optimalizace](slides/ans-02-optimization.pdf)   | optimalizace, gradient, SGD, momentum, Adam |
+| 3. | 8.10.2025 | [Zpětná propagace](slides/ans-03-backprop.pdf)   | zpětná propagace, reverzní aut. derivování  |
 
 
 ## Úlohy
@@ -19,6 +20,7 @@
 | #  | úloha                                                           | body    | deadline   |
 |----|-----------------------------------------------------------------|---------|------------|
 | 1. | [Lineární klasifikace](assignments/linear_classification.ipynb) | 20 (32) | 21.10.2025 |
+| 2. | [Dvouvrstvý perceptron](assignments/two_layer_perceptron.ipynb) | 14 (17) | 28.10.2025 |
 
 
 ## Nastavení

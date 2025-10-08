@@ -35,3 +35,27 @@
       required: false
       params:
         preprocess_fn: preprocess
+
+- notebook: two_layer_perceptron
+  testfile: test_two_layer_perceptron
+  deadline: 2025-10-28
+  tests:
+    - name: TestPreprocess
+      points: 1
+      params:
+        preprocess_fn: preprocess
+    - name: TestInit
+      points: 1
+    - name: TestTrainStep
+      points: 5
+    - name: TestValStep
+      points: 2
+    - name: TestValAccuracy45
+      points: 5
+      params:
+        preprocess_fn: preprocess
+    - name: TestValAccuracy50
+      points: 3
+      required: false
+      params:
+        preprocess_fn: preprocess

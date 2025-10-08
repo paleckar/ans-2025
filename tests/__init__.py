@@ -7,23 +7,25 @@ import unittest
 
 import torch
 
+import ans
+
 
 class ANSTestCase(unittest.TestCase):
-
     def __init__(self, methodName: str = '', **params: Any):
         super().__init__(methodName=methodName)
         self.params = params
 
     @classmethod
     def eval(
-            cls,
-            tests: Optional[str] = None,
-            verbosity: int = 2,
-            **params: dict[str, Any]
+        cls,
+        tests: Optional[str] = None,
+        verbosity: int = 2,
+        **params: dict[str, Any],
     ) -> unittest.TestResult:
         class _TestCaseClass(cls):
             def __init__(self, methodName: str = ''):
                 super().__init__(methodName=methodName, **params)
+
         if tests is not None:
             suite = unittest.TestSuite()
             suite.addTests([_TestCaseClass(methodName=t) for t in tests.split(',')])
@@ -77,34 +79,34 @@ class ANSTestCase(unittest.TestCase):
     def assertCalling(self, func: Callable, names: list[str]) -> None:
         call_names = self.inspect_function_dependencies(func)
         for name in names:
-            self.assertIn(name, call_names, msg=f"Function {func.__qualname__} should call {name}")
+            self.assertIn(name, call_names, msg=f'Function {func.__qualname__} should call {name}')
 
     def assertNoLoops(self, func: Callable) -> None:
         if any(
             isinstance(e, (ast.For, ast.While, ast.ListComp, ast.GeneratorExp))
             for e in ast.walk(ast.parse(self.get_source(func)))
         ):
-            self.fail(msg=f"Manual loops are not allowed inside {func.__qualname__}")
+            self.fail(msg=f'Manual loops are not allowed inside {func.__qualname__}')
 
     def assertTensorsClose(
-            self,
-            actual: Union[float, torch.Tensor],
-            expected: Union[float, torch.Tensor],
-            rtol: float = 1e-3,
-            atol: float = 1e-4,
-            msg: str = ""
+        self,
+        actual: Union[float, torch.Tensor],
+        expected: Union[float, torch.Tensor],
+        rtol: float = 1e-3,
+        atol: float = 1e-4,
+        msg: str = '',
     ) -> None:
         if not isinstance(actual, torch.Tensor):
             actual = torch.tensor(actual)
         if not isinstance(expected, torch.Tensor):
             expected = torch.tensor(expected)
         try:
-            err_str = ""
+            err_str = ''
             torch.testing.assert_close(actual, expected, rtol=rtol, atol=atol)
         except AssertionError as e:
-            err_str = f"{e}\n"
+            err_str = f'{e}\n'
             if self.params.get('verbose', True):
-                err_str += f"\nActual\n{actual}\n"
-                err_str += f"\nExpected\n{expected}\n"
+                err_str += f'\nActual\n{actual}\n'
+                err_str += f'\nExpected\n{expected}\n'
         if err_str:
-            self.fail(msg=f"{msg}\n{err_str}")
+            self.fail(msg=f'{msg}\n{err_str}')
