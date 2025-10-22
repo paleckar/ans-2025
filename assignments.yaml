@@ -74,3 +74,49 @@
       points: 5
     - name: TestBackprop
       points: 13
+
+- notebook: perceptron_autograd
+  testfile: test_perceptron_autograd
+  deadline: 2024-11-12
+  tests:
+    - name: TestMatMul
+      points: 5
+    - name: TestMatMulGeneral
+      points: 8
+      required: false
+    - name: TestSigmoid
+      points: 2
+    - name: TestExp
+      points: 2
+    - name: TestLog
+      points: 2
+    - name: TestGetItem
+      points: 2
+    - name: TestSigmoid
+      points: 2
+    - name: TestSum
+      points: 5
+    - name: TestMean
+      points: 5
+      required: false
+    - name: TestSoftmaxCrossEntropy
+      points: 2
+    - name: TestInit
+      points: 1
+    - name: TestTrainStep
+      points: 2
+    - name: TestValStep
+      points: 2
+    - name: TestPreprocess
+      points: 1
+      params:
+        preprocess_fn: preprocess
+    - name: TestValAccuracy45
+      points: 1
+      params:
+        preprocess_fn: preprocess
+    - name: TestValAccuracy50
+      points: 1
+      required: false
+      params:
+        preprocess_fn: preprocess

@@ -271,6 +271,72 @@ class TwoLayerPerceptron:
         return model
 
 
+class TwoLayerPerceptronAutograd:
+    def __init__(self, in_size: int, hidden_size: int, out_size: int, weight_scale: float = 0.001) -> None:
+        ########################################
+        # TODO: implement
+
+        self.weight1 = ...
+        self.bias1 = ...
+        self.weight2 = ...
+        self.bias2 = ...
+
+        # ENDTODO
+        ########################################
+
+    def train_step(
+        self, inputs: torch.Tensor, targets: torch.Tensor, learning_rate: float = 1e-3
+    ) -> tuple[float, torch.Tensor]:
+        ########################################
+        # TODO: implement
+
+        raise NotImplementedError
+
+        # ENDTODO
+        ########################################
+
+        return loss.data.item(), logits.data
+
+    def val_step(
+        self,
+        inputs: torch.Tensor,
+        targets: torch.Tensor,
+    ) -> tuple[float, torch.Tensor]:
+        """
+        Args:
+            inputs: input data batch; shape (N, D)
+            targets: vector of class indicies (integers); shape (N,)
+        Returns:
+            loss: average loss over the batch; float
+            logits: classification scores predicted on the batch; shape (N, K)
+        """
+        ########################################
+        # TODO: implement
+
+        raise NotImplementedError
+
+        # ENDTODO
+        ########################################
+
+        return loss.data.item(), logits.data
+
+    def save(self, filename: str) -> None:
+        torch.save(
+            dict(weight1=self.weight1.data, bias1=self.bias1.data, weight2=self.weight2.data, bias2=self.bias2.data),
+            filename,
+        )
+
+    @classmethod
+    def load(cls, filename: str) -> Self:
+        dic = torch.load(filename, weights_only=True)
+        model = cls(*dic['weight1'].shape, dic['weight2'].shape[1])
+        model.weight1 = ans.autograd.Variable(dic['weight1'])
+        model.bias1 = ans.autograd.Variable(dic['bias1'])
+        model.weight2 = ans.autograd.Variable(dic['weight2'])
+        model.bias2 = ans.autograd.Variable(dic['bias2'])
+        return model
+
+
 def accuracy(scores: torch.Tensor, targets: torch.Tensor) -> float:
     """
     Args:
@@ -291,7 +357,10 @@ def accuracy(scores: torch.Tensor, targets: torch.Tensor) -> float:
     return acc
 
 
-def softmax_cross_entropy(logits: torch.Tensor, targets: torch.Tensor) -> torch.Tensor:
+def softmax_cross_entropy(
+    logits: torch.Tensor | ans.autograd.Variable,
+    targets: torch.Tensor,
+) -> torch.Tensor | ans.autograd.Variable:
     """
     Args:
         scores: output linear scores (logits or probabilities); shape (num_samples, num_classes)
