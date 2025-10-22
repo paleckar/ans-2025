@@ -21,6 +21,7 @@
 |----|-----------------------------------------------------------------|---------|------------|
 | 1. | [Lineární klasifikace](assignments/linear_classification.ipynb) | 20 (32) | 21.10.2025 |
 | 2. | [Dvouvrstvý perceptron](assignments/two_layer_perceptron.ipynb) | 14 (17) | 28.10.2025 |
+| 3. | [Autograd](assignments/autograd.ipynb)                          | 33 (33) | 18.11.2025 |
 
 
 ## Nastavení

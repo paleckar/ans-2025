@@ -110,3 +110,19 @@ class ANSTestCase(unittest.TestCase):
                 err_str += f'\nExpected\n{expected}\n'
         if err_str:
             self.fail(msg=f'{msg}\n{err_str}')
+
+
+def rand_var(
+    *shape: int,
+    name: str | None = None,
+    mean: float = 0.0,
+    std: float = 1.0,
+    requires_grad: bool = False,
+    dtype: torch.dtype = torch.float64,
+    device: torch.device = torch.device('cpu'),
+    rng_fn: Callable = torch.randn,
+) -> ans.autograd.Variable:
+    tensor = mean + std * rng_fn(shape, dtype=dtype, device=device)
+    if requires_grad:
+        tensor = tensor.requires_grad_()
+    return ans.autograd.Variable(tensor, name=name)
