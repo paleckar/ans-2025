@@ -25,6 +25,7 @@
 | 2. | [Dvouvrstvý perceptron](assignments/two_layer_perceptron.ipynb) | 14 (17) | 28.10.2025 |
 | 3. | [Autograd](assignments/autograd.ipynb)                          | 33 (33) | 18.11.2025 |
 | 4. | [Perceptron autogradem](assignments/perceptron_autograd.ipynb)  | 29 (43) | 2.12.2025  |
+| 5. | [Neural knihovna](assignments/neural_library.ipynb)             | 18 (54) | 16.12.2025 |
 
 
 ## Nastavení

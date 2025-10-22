@@ -20,11 +20,7 @@ class ClassificationModel(Protocol):
         """
         ...
 
-    def val_step(
-        self,
-        inputs: torch.Tensor,
-        targets: torch.Tensor,
-    ) -> tuple[float, torch.Tensor]:
+    def val_step(self, inputs: torch.Tensor, targets: torch.Tensor) -> tuple[float, torch.Tensor]:
         """
         Performs one step of validation: forward pass, loss computation.
 
@@ -87,11 +83,7 @@ class LinearSoftmaxModel:
 
         return loss, logits
 
-    def val_step(
-        self,
-        inputs: torch.Tensor,
-        targets: torch.Tensor,
-    ) -> tuple[float, torch.Tensor]:
+    def val_step(self, inputs: torch.Tensor, targets: torch.Tensor) -> tuple[float, torch.Tensor]:
         """
         Performs one step of validation of linear softmax cross entropy classifier:
         - s = w * x + b
@@ -147,11 +139,7 @@ class LinearSVMModel(LinearSoftmaxModel):
 
         return loss, logits
 
-    def val_step(
-        self,
-        inputs: torch.Tensor,
-        targets: torch.Tensor,
-    ) -> tuple[float, torch.Tensor]:
+    def val_step(self, inputs: torch.Tensor, targets: torch.Tensor) -> tuple[float, torch.Tensor]:
         """
         Performs one step of validation of linear support vector machine (SVM) classifier:
         - s = w * x + b
@@ -183,13 +171,16 @@ class TwoLayerPerceptron:
         out_size: int,
         weight_scale: float = 0.001,
     ) -> None:
-        self.weight1 = weight_scale * torch.randn(in_size, hidden_size)
-        self.bias1 = torch.zeros(hidden_size)
-        self.weight2 = weight_scale * torch.randn(hidden_size, out_size)
-        self.bias2 = torch.zeros(out_size)
+        self.weight1 = ...
+        self.bias1 = ....
+        self.weight2 = ...
+        self.bias2 = ...
 
     def train_step(
-        self, inputs: torch.Tensor, targets: torch.Tensor, learning_rate: float = 1e-3
+        self,
+        inputs: torch.Tensor,
+        targets: torch.Tensor,
+        learning_rate: float = 1e-3,
     ) -> tuple[float, torch.Tensor]:
         ########################################
         # TODO: implement
@@ -234,11 +225,7 @@ class TwoLayerPerceptron:
 
         return loss, logits
 
-    def val_step(
-        self,
-        inputs: torch.Tensor,
-        targets: torch.Tensor,
-    ) -> tuple[float, torch.Tensor]:
+    def val_step(self, inputs: torch.Tensor, targets: torch.Tensor) -> tuple[float, torch.Tensor]:
         """
         Args:
             inputs: input data batch; shape (N, D)
@@ -272,7 +259,13 @@ class TwoLayerPerceptron:
 
 
 class TwoLayerPerceptronAutograd:
-    def __init__(self, in_size: int, hidden_size: int, out_size: int, weight_scale: float = 0.001) -> None:
+    def __init__(
+        self,
+        in_size: int,
+        hidden_size: int,
+        out_size: int,
+        weight_scale: float = 0.001,
+    ) -> None:
         ########################################
         # TODO: implement
 
@@ -285,7 +278,10 @@ class TwoLayerPerceptronAutograd:
         ########################################
 
     def train_step(
-        self, inputs: torch.Tensor, targets: torch.Tensor, learning_rate: float = 1e-3
+        self,
+        inputs: torch.Tensor,
+        targets: torch.Tensor,
+        learning_rate: float = 1e-3,
     ) -> tuple[float, torch.Tensor]:
         ########################################
         # TODO: implement
@@ -297,11 +293,7 @@ class TwoLayerPerceptronAutograd:
 
         return loss.data.item(), logits.data
 
-    def val_step(
-        self,
-        inputs: torch.Tensor,
-        targets: torch.Tensor,
-    ) -> tuple[float, torch.Tensor]:
+    def val_step(self, inputs: torch.Tensor, targets: torch.Tensor) -> tuple[float, torch.Tensor]:
         """
         Args:
             inputs: input data batch; shape (N, D)
@@ -337,6 +329,46 @@ class TwoLayerPerceptronAutograd:
         return model
 
 
+class AutogradClassifier(ans.nn.Module):
+    def __init__(self, backbone: ans.nn.Module, optimizer: ans.nn.Optimizer) -> None:
+        self.backbone = backbone
+        self.optimizer = optimizer
+
+    def train_step(
+        self,
+        inputs: torch.Tensor,
+        targets: torch.Tensor,
+        learning_rate: float = 1e-3,
+    ) -> tuple[float, torch.Tensor]:
+        ########################################
+        # TODO: implement
+
+        raise NotImplementedError
+
+        # ENDTODO
+        ########################################
+
+        return loss.data.item(), logits.data
+
+    def val_step(self, inputs: torch.Tensor, targets: torch.Tensor) -> tuple[float, torch.Tensor]:
+        ########################################
+        # TODO: implement
+
+        raise NotImplementedError
+
+        # ENDTODO
+        ########################################
+
+        return loss.data.item(), logits.data
+
+    def save(self, filename: str) -> None:
+        torch.save(self, filename)  # not the correct & safe way to do this
+
+    @classmethod
+    def load(cls, filename: str) -> Self:
+        return torch.load(filename, weights_only=False)  # not the correct & safe way to do this
+
+
 def accuracy(scores: torch.Tensor, targets: torch.Tensor) -> float:
     """
     Args:
@@ -358,8 +390,7 @@ def accuracy(scores: torch.Tensor, targets: torch.Tensor) -> float:
 
 
 def softmax_cross_entropy(
-    logits: torch.Tensor | ans.autograd.Variable,
-    targets: torch.Tensor,
+    logits: torch.Tensor | ans.autograd.Variable, targets: torch.Tensor
 ) -> torch.Tensor | ans.autograd.Variable:
     """
     Args:

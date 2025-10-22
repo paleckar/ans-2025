@@ -62,7 +62,7 @@
 
 - notebook: autograd
   testfile: test_autograd
-  deadline: 2024-11-05
+  deadline: 2025-11-18
   tests:
     - name: TestAddTensors
       points: 5
@@ -77,7 +77,7 @@
 
 - notebook: perceptron_autograd
   testfile: test_perceptron_autograd
-  deadline: 2024-11-12
+  deadline: 2025-12-02
   tests:
     - name: TestMatMul
       points: 5
@@ -120,3 +120,59 @@
       required: false
       params:
         preprocess_fn: preprocess
+
+- notebook: neural_library
+  testfile: test_neural_library
+  deadline: 2025-12-16
+  tests:
+    - name: TestLinearModule
+      points: 2
+    - name: TestSigmoidModule
+      points: 1
+    - name: TestReLUVariable
+      points: 2
+    - name: TestReLUModule
+      points: 1
+    - name: TestSequentialModule
+      points: 1
+    - name: TestSGD
+      points: 5
+    - name: TestAdam
+      points: 8
+      required: false
+    - name: TestDropoutFunction
+      points: 2
+      required: false
+    - name: TestDropoutModule
+      points: 1
+      required: false
+    - name: TestBatchNorm1dFunction
+      points: 8
+      required: false
+    - name: TestBatchNorm1dModule
+      points: 1
+      required: false
+    - name: TestAutogradClassifier
+      points: 2
+    - name: TestTrainEpochValidate
+      points: 1
+    - name: TestBatchLoaderWithDevice
+      points: 1
+    - name: TestPreprocess
+      points: 1
+      params:
+        preprocessor_cls: DataPreprocessor
+    - name: TestValAccuracy45
+      points: 1
+      params:
+        preprocessor_cls: DataPreprocessor
+    - name: TestValAccuracy55
+      points: 8
+      required: false
+      params:
+        preprocessor_cls: DataPreprocessor
+    - name: TestValAccuracy60
+      points: 8
+      required: false
+      params:
+        preprocessor_cls: DataPreprocessor

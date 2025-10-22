@@ -120,7 +120,7 @@ class Variable:
 
         # ENDTODO
         ########################################
-    
+
     def __rmatmul__(self, other: Number | torch.Tensor | Self) -> Self:
         ########################################
         # TODO: implement
@@ -135,16 +135,16 @@ class Variable:
         # TODO: implement
 
         raise NotImplementedError
-    
+
         # ENDTODO
         ########################################
-    
+
     def log(self) -> Self:
         ########################################
         # TODO: implement
 
         raise NotImplementedError
-    
+
         # ENDTODO
         ########################################
 
@@ -153,16 +153,25 @@ class Variable:
         # TODO: implement
 
         raise NotImplementedError
-    
+
         # ENDTODO
         ########################################
-    
+
     def sigmoid(self) -> Self:
         ########################################
         # TODO: implement
 
         raise NotImplementedError
-    
+
+        # ENDTODO
+        ########################################
+
+    def relu(self, negative_slope: float = 0.0) -> Self:
+        ########################################
+        # TODO: implement
+
+        raise NotImplementedError
+
         # ENDTODO
         ########################################
 
@@ -171,7 +180,7 @@ class Variable:
         # TODO: implement
 
         raise NotImplementedError
-    
+
         # ENDTODO
         ########################################
 
@@ -180,16 +189,16 @@ class Variable:
         # TODO: implement
 
         raise NotImplementedError
-    
+
         # ENDTODO
         ########################################
-    
+
     def reshape(self, *shape: int) -> Self:
         ########################################
         # TODO: implement
-    
+
         raise NotImplementedError
-    
+
         # ENDTODO
         ########################################
 
