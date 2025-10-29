@@ -11,6 +11,7 @@
 | 3. | 8.10.2025  | [Zpětná propagace](slides/ans-03-backprop.pdf)     | zpětná propagace, reverzní aut. derivování    |
 | 4. | 15.10.2025 | [Trénování sítí v praxi I](slides/ans-04-mlp.pdf)  | vícevrstvý perceptron, aktivace, inicializace |
 | 5. | 22.10.2025 | [Trénování sítí v praxi II](slides/ans-04-mlp.pdf) | regularizace, preprocessing, trénování        |
+| 6. | 29.10.2025 | [Konvoluční sítě](slides/ans-05-convolution.pdf)   | konvoluce, pooling, arch., transfer learning  |
 
 
 ## Úlohy
@@ -26,6 +27,7 @@
 | 3. | [Autograd](assignments/autograd.ipynb)                          | 33 (33) | 18.11.2025 |
 | 4. | [Perceptron autogradem](assignments/perceptron_autograd.ipynb)  | 29 (43) | 2.12.2025  |
 | 5. | [Neural knihovna](assignments/neural_library.ipynb)             | 18 (54) | 16.12.2025 |
+| 6. | [Konvoluční síť](assignments/convolution.ipynb)                 | 22 (40) | 31.12.2025 |
 
 
 ## Nastavení

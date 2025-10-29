@@ -176,3 +176,49 @@
       required: false
       params:
         preprocessor_cls: DataPreprocessor
+
+- notebook: convolution
+  testfile: test_convolution
+  deadline: 2025-12-31
+  tests:
+    - name: TestConv2dFunction
+      points: 5
+    - name: TestConv2dFunctionOptional
+      points: 5
+      required: false
+    - name: TestConv2dModule
+      points: 2
+    - name: TestMaxPool2dFunction
+      points: 5
+    - name: TestMaxPool2dModule
+      points: 1
+    - name: TestReshapeVariable
+      points: 2
+    - name: TestFlattenModule
+      points: 1
+    - name: TestBatchNorm2dFunction
+      points: 3
+      required: false
+    - name: TestBatchNorm2dModule
+      points: 2
+      required: false
+    - name: TestBackbone
+      points: 3
+    - name: TestDataPreprocessor
+      points: 1
+      params:
+        preprocessor_cls: DataPreprocessor
+    - name: TestValAccuracy75
+      points: 2
+      params:
+        preprocessor_cls: DataPreprocessor
+    - name: TestValAccuracy85
+      points: 3
+      required: false
+      params:
+        preprocessor_cls: DataPreprocessor
+    - name: TestValAccuracy90
+      points: 5
+      required: false
+      params:
+        preprocessor_cls: DataPreprocessor
