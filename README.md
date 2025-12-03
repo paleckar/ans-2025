@@ -3,16 +3,19 @@
 
 ## Přednášky
 
-| #  | datum      | přednáška                                          | obsah                                         |
-|----|------------|----------------------------------------------------|-----------------------------------------------|
-| 0. | 17.9.2025  | [Úvod](slides/ans-00-intro.pdf)                    | podmínky předmětu, úvod                       |
-| 1. | 17.9.2025  | [Lineární klasifikace](slides/ans-01-linear.pdf)   | lineární klasifikace, softmax, svm            |
-| 2. | 24.9.2025  | [Optimalizace](slides/ans-02-optimization.pdf)     | optimalizace, gradient, SGD, momentum, Adam   |
-| 3. | 8.10.2025  | [Zpětná propagace](slides/ans-03-backprop.pdf)     | zpětná propagace, reverzní aut. derivování    |
-| 4. | 15.10.2025 | [Trénování sítí v praxi I](slides/ans-04-mlp.pdf)  | vícevrstvý perceptron, aktivace, inicializace |
-| 5. | 22.10.2025 | [Trénování sítí v praxi II](slides/ans-04-mlp.pdf) | regularizace, preprocessing, trénování        |
-| 6. | 29.10.2025 | [Konvoluční sítě](slides/ans-05-convolution.pdf)   | konvoluce, pooling, arch., transfer learning  |
-
+| #   | datum      | přednáška                                          | obsah                                         |
+|-----|------------|----------------------------------------------------|-----------------------------------------------|
+| 0.  | 17.9.2025  | [Úvod](slides/ans-00-intro.pdf)                    | podmínky předmětu, úvod                       |
+| 1.  | 17.9.2025  | [Lineární klasifikace](slides/ans-01-linear.pdf)   | lineární klasifikace, softmax, svm            |
+| 2.  | 24.9.2025  | [Optimalizace](slides/ans-02-optimization.pdf)     | optimalizace, gradient, SGD, momentum, Adam   |
+| 3.  | 8.10.2025  | [Zpětná propagace](slides/ans-03-backprop.pdf)     | zpětná propagace, reverzní aut. derivování    |
+| 4.  | 15.10.2025 | [Trénování sítí v praxi I](slides/ans-04-mlp.pdf)  | vícevrstvý perceptron, aktivace, inicializace |
+| 5.  | 22.10.2025 | [Trénování sítí v praxi II](slides/ans-04-mlp.pdf) | regularizace, preprocessing, trénování        |
+| 6.  | 29.10.2025 | [Konvoluční sítě](slides/ans-05-convolution.pdf)   | konvoluce, pooling, arch., transfer learning  |
+| 7.  | 5.11.2025  | [Analýza konv. sítí](slides/ans-06-analysis.pdf)   | vizualizace, adversarialy, style transfer     |
+| 8.  | 12.11.2025 | [Rekurentní sítě](slides/ans-07-recurrence.pdf)    | jaz. model, RNN, BPTT, LSTM, GRU, CTC         |
+| 9.  | 26.11.2025 | [Attention](slides/ans-08-attention.pdf)           | attention, self att., transformer, GPT, BERT  |
+| 10. | 3.12.2025  | [Generativní modely](slides/ans-09-generative.pdf) | autoenkodér, GAN, pix2pix, CycleGAN, StyleGAN |
 
 ## Úlohy
 
